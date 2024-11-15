@@ -1,0 +1,2 @@
+# sol
+Shadcn one-liner
