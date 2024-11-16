@@ -1,5 +1,11 @@
 name: Bundle into a single file
-on: push
+on:
+  push:
+    paths:
+      - "*.ts"
+      - "package.json"
+      - "bun.lock"
+      - ".github/worklows/build.yaml"
 
 jobs:
   build:
