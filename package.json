@@ -1,0 +1,26 @@
+{
+  "name": "sol",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "prebuild": "bun build --target=bun --minify --outfile=/tmp/sol.js index.ts",
+    "build": "mkdir -p dist && echo '#!/usr/bin/env bun' > dist/sol.js && cat /tmp/sol.js >> dist/sol.js",
+    "postbuild": "chmod +x dist/sol.js",
+    "clean": "rm -rf ./dist"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "linkedom": "^0.18.5",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
