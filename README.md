@@ -6,7 +6,7 @@ Shadcn one-liner
 First you must have [bun](https://bun.sh/). Then you can directly download `sol.js`:
 
 ```shell
-wget https://github.com/asiffer/sol/actions/runs/11870669271/artifacts/2196625716
+wget https://github.com/asiffer/sol/releases/download/v0.1.0/sol.js
 ```
 
 ## Run
