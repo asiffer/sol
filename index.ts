@@ -1,3 +1,4 @@
+import { version } from "./package.json";
 import postcss from "postcss";
 import tailwind, { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
@@ -15,6 +16,8 @@ import slate from "./css/slate.txt" with { type: "text" };
 import stone from "./css/stone.txt" with { type: "text" }; 
 // @ts-ignore
 import zinc from "./css/zinc.txt" with { type: "text" }; 
+
+const VERSION = version;
 
 const CSS = {
   "gray": gray,
@@ -164,6 +167,7 @@ interface WebsocketData {
 }
 
 const action = async (htmlFile: string, options: Options) => {
+  console.log(`🤩 sol - shadcn one-liner - (version ${VERSION})`);
   const clients = new Set<ServerWebSocket<WebsocketData>>();
   // Watch for file changes and notify all connected clients
   watch(htmlFile, { recursive: false }, () => {
